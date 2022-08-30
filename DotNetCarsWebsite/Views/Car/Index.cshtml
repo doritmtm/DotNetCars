@@ -1,0 +1,39 @@
+﻿@model List<Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cars</h1>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Hp
+            </th>
+            <th>
+                Mass
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Name
+                </td>
+                <td>
+                    @obj.Hp
+                </td>
+                <td>
+                    @obj.Mass
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
