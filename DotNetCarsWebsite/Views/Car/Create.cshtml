@@ -1,0 +1,38 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-4">Create new car</h1>
+<form method="post">
+    <fieldset>
+        <div class="form-group">
+            <label for="Name1" asp-for="Name" class="form-label mt-4">Name</label>
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input type="text" asp-for="Name" class="form-control" id="Name1" aria-describedby="Name1Help" placeholder="Enter car's name">
+            <small id="Name1Help" class="form-text text-muted">The car's manufacturer name.</small>
+        </div>
+        <div class="form-group">
+            <label for="Hp1" asp-for="Hp" class="form-label mt-4">Horse power</label>
+            <span asp-validation-for="Hp" class="text-danger"></span>
+            <input type="number" asp-for="Hp" class="form-control" id="Hp1" aria-describedby="Hp1Help" placeholder="Enter car's hp">
+            <small id="Hp1Help" class="form-text text-muted">The car's engine horse power.</small>
+        </div>
+        <div class="form-group">
+            <label for="Mass1" asp-for="Mass" class="form-label mt-4">Weight</label>
+            <span asp-validation-for="Mass" class="text-danger"></span>
+            <input type="number" asp-for="Mass" class="form-control" id="Mass1" aria-describedby="Mass1Help" placeholder="Enter car's weight">
+            <small id="Mass1Help" class="form-text text-muted">The car's weight.</small>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+    </fieldset>
+</form>
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
+

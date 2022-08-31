@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace DotNetCarsWebsite.Models
 {
@@ -10,6 +11,7 @@ namespace DotNetCarsWebsite.Models
         public string Name { get; set; }
         [Required]
         public int Hp { get; set; }
+        [DisplayName("Weight")]
         public int Mass { get; set; }
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     }

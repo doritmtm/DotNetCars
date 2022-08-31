@@ -17,5 +17,25 @@ namespace DotNetCarsWebsite.Controllers
             List<Car> Cars = CarsDb.Cars.ToList();
             return View(Cars);
         }
+
+        //GET
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Car newCar)
+        {
+            if(ModelState.IsValid)
+            {
+                CarsDb.Cars.Add(newCar);
+                CarsDb.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(newCar);
+        }
     }
 }
